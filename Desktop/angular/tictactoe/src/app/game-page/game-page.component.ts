@@ -1,15 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import {Cell} from '../cell';
 
 @Component({
   selector: 'app-game-page',
   templateUrl: './game-page.component.html',
-  styleUrls: ['./game-page.component.scss']
+  styleUrls: ['./game-page.component.scss'] 
 })
 export class GamePageComponent implements OnInit {
 
-  constructor() { }
+  public grid: Array<Cell> = [];
+
+  private gridSize = 9;
+
+  constructor() { 
+    for (let i = 0; i < this.gridSize; i++) {
+      this.grid.push({
+        empty: true,
+        cross: false,
+        circle: false,
+      });
+    }
+   }
 
   ngOnInit(): void {
+  }
+
+  public clickOnCell(cell: Cell): void{
+    
   }
 
 }
